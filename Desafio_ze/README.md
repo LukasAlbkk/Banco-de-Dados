@@ -1,4 +1,4 @@
-# Desafio Zé Delivery - Busca de Parceiros
+# Desafio Zé Delivery - Busca de Parceiros - Lucas Albuquerque Santos Costa - PDBD009
 
 Este projeto Python permite que o usuário interaja com um banco de dados MySQL, realizando buscas de parceiros com base no ID ou nas coordenadas geográficas do usuário. O sistema retorna informações sobre o parceiro mais próximo que cobre a área fornecida ou os dados de um parceiro específico com base no ID.
 
@@ -38,29 +38,21 @@ Para executar o projeto, você precisará dos seguintes requisitos instalados em
     - Certifique-se de ter o MySQL instalado e rodando em sua máquina.
     - Configure o banco de dados `ze_delivery` com uma tabela `parceiros` para armazenar os dados.
     - Exemplo de criação de tabela:
-
-    ```sql
-    CREATE TABLE parceiros (
-        id INT PRIMARY KEY,
-        tradingName VARCHAR(255),
-        ownerName VARCHAR(255),
-        document VARCHAR(50) UNIQUE,
-        address POINT,
-        coverageArea MULTIPOLYGON
-    );
-    ```
+    - Para isso rode: **python3 Cria_tabela.py**
 
 5. **Carregue os dados no banco**:
-    - Insira os dados dos parceiros na tabela `parceiros`. Se tiver um arquivo JSON, você pode carregar os dados diretamente no banco.
+    - Insira os dados dos parceiros na tabela `parceiros`. O arquivo `pdvs.json` se encontra na pasta, basta executar o codigo em python
+    para preencher o banco de dados
+    - Digite **python3 preencher_database.py**
 
 ## Como Executar
 
 1. **Edite as credenciais de conexão com o MySQL**:
-    No arquivo `query_database.py`, edite as informações de conexão com o banco de dados MySQL de acordo com sua configuração:
+    No arquivo `query_data.py`, edite as informações de conexão com o banco de dados MySQL de acordo com sua configuração:
 
     ```python
     conn = mysql.connector.connect(
-        host="Seu_Host",  # Exemplo: localhost ou MacBook-Air-de-Lucas-3.local
+        host="Seu_Host", 
         user="Seu_Usuario",
         password="Sua_Senha",
         database="ze_delivery"
@@ -71,7 +63,7 @@ Para executar o projeto, você precisará dos seguintes requisitos instalados em
     Com o ambiente configurado, execute o seguinte comando:
 
     ```bash
-    python3 query_database.py
+    python3 query_data.py
     ```
 
 3. **Interaja com o sistema**:
